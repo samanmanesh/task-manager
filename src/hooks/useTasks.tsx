@@ -22,15 +22,12 @@ export const useTasks = () => {
 
   const toggleTask = (id: string) => {
     setTasks(
-      tasks.map((task) => {
-        if (task.id === id) {
-          task.completed = !task.completed;
-        }
-        return task;
-      })
+      tasks.map((task) => ({
+        ...task,
+        completed: task.id === id ? !task.completed : task.completed,
+      }))
     );
-  }
-
+  };
 
   return {
     tasks,
