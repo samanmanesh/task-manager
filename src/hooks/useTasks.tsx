@@ -20,7 +20,7 @@ export const useTasks = () => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  const toggleTasks = (id: string) => {
+  const toggleTask = (id: string) => {
     setTasks(
       tasks.map((task) => {
         if (task.id === id) {
@@ -36,6 +36,6 @@ export const useTasks = () => {
     tasks,
     addTask,
     removeTask,
-    toggleTasks,
+    toggleTask,
   };
 };
